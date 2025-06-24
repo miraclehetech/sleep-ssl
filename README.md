@@ -148,7 +148,9 @@ Our method achieves state-of-the-art performance on sleep analysis tasks. Detail
 
 ## Interface
 Still we have provided a gradio interface which are easy to use for non-computer specialists. You can input the patient's records in a pt file after preprocessing and the system can automatically output a projection score with warnings if the projection score is higher than the average level of patients. However, the complete version will be online after the publishment of our article.
-
+![overview of interface](interface-3.png)
+![Output Example](interface-2.png)
+![Comparison Card](interface-1.png)
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
