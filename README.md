@@ -141,39 +141,20 @@ The MTS_LOF_revised model consists of:
 
 1. **Convolutional Encoder**: 1D convolutions for local feature extraction
 2. **Transformer Encoder**: Multi-head attention for temporal modeling
-3. **Classification Head**: Linear layer for downstream tasks
 
 ## 🎯 Results
 
 Our method achieves state-of-the-art performance on sleep analysis tasks. Detailed results and comparisons are available in our paper.
 
-## 📚 Citation
-
-If you find this work useful for your research, please cite our paper:
-
-```bibtex
-@article{your_paper_2024,
-  title={Your Paper Title},
-  author={Your Name and Co-authors},
-  journal={Journal Name},
-  year={2024},
-  volume={X},
-  pages={XXX-XXX}
-}
-```
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🤝 Contributing
-
-We welcome contributions! Please feel free to submit a Pull Request.
-
 ## 📧 Contact
 
 For questions or issues, please contact:
-- Your Name: your.email@example.com
+- ZhengXiao He zhengxiaohe@arizona.edu
 - Project Issues: [GitHub Issues](https://github.com/yourusername/sleep-ssl/issues)
 
 ## 🙏 Acknowledgments
@@ -183,5 +164,5 @@ For questions or issues, please contact:
 - All contributors and collaborators
 
 ---
-
+We only open-source part of the codes here since the paper is not published yet. After publishing, we will publish all the analysi codes here.
 ⭐ If you find this repository helpful, please consider giving it a star! 
