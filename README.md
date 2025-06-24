@@ -111,7 +111,7 @@ python main.py --train_mode finetune --data_path /path/to/data --load_para True 
 
 ```
 ├── main.py                    # Main training script
-├── model.py                   # Model definitions (MTS_LOF, MTS_LOF_revised)
+├── model.py                   # Model definitions
 ├── utils.py                   # Utility functions and ResNet1D
 ├── shhs-preprocess.py         # Data preprocessing script
 ├── config_files/
@@ -137,7 +137,7 @@ Model and training configurations are defined in `config_files/SHHS1_Configs.py`
 
 ## 📈 Model Architecture
 
-The MTS_LOF_revised model consists of:
+The self-supervised  model consists of:
 
 1. **Convolutional Encoder**: 1D convolutions for local feature extraction
 2. **Transformer Encoder**: Multi-head attention for temporal modeling
