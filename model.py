@@ -19,8 +19,8 @@ class MTS_LOF_revised(nn.Module):
                 kernel_size=configs.kernel_size,
                 stride=configs.stride,
                 configs=configs,
-                groups=1,  # 减少分组，增加特征交互
-                n_block=4,  # 增加网络深度
+                groups=1,  # Reduce groups, increase feature interaction
+                n_block=4,  # Increase network depth
                 downsample_gap=1,
                 increasefilter_gap=3,
                 use_bn=True,
@@ -33,8 +33,8 @@ class MTS_LOF_revised(nn.Module):
                 kernel_size=configs.kernel_size,
                 stride=configs.stride,
                 configs=configs,
-                groups=1,  # 减少分组，增加特征交互
-                n_block=4,  # 增加网络深度
+                groups=1,  # Reduce groups, increase feature interaction
+                n_block=4,  # Increase network depth
                 downsample_gap=1,
                 increasefilter_gap=3,
                 use_bn=True,
@@ -42,7 +42,7 @@ class MTS_LOF_revised(nn.Module):
         )
         self.transformer_encoder = Transformer(
             configs.embed_dim, 
-            depth=6,  # 减少Transformer层数
+            depth=6,  # Reduce Transformer layers
             heads=8, 
             dim_head=configs.embed_dim//8, 
             mlp_dim=configs.embed_dim*4
@@ -55,17 +55,17 @@ class MTS_LOF_revised(nn.Module):
         self.mask_token = nn.Parameter(torch.zeros(1, 1, configs.embed_dim))
         self.decoder = Transformer(
             configs.embed_dim, 
-            depth=4,  # 减少decoder层数
+            depth=4,  # Reduce decoder layers
             heads=8, 
             dim_head=configs.embed_dim//8, 
             mlp_dim=configs.embed_dim*4
         )
         self.sample_rate = 125
         self.attention_weights = nn.Sequential(
-            nn.LayerNorm(configs.embed_dim),  # 添加归一化
+            nn.LayerNorm(configs.embed_dim),  # Add normalization
             nn.Linear(configs.embed_dim, configs.embed_dim//2),
-            nn.GELU(),  # 使用 GELU 替代 Tanh
-            nn.Dropout(0.1),  # 添加 dropout
+            nn.GELU(),  # Use GELU instead of Tanh
+            nn.Dropout(0.1),  # Add dropout
             nn.Linear(configs.embed_dim//2, 1),
         )
         self.focal_loss = FocalLoss(gamma=2.0)
@@ -74,7 +74,7 @@ class MTS_LOF_revised(nn.Module):
         x_in=self.conv_block(x_in)
         embed_dim=x_in.shape[1]
         x_in=x_in.permute(0,2,1)
-        # 添加残差连接
+        # Add residual connection
         x_in=x_in.reshape(batch_size,-1,embed_dim)
         b, n, _ = x_in.shape
         pe = posemb_sincos_1d(x_in)
@@ -145,10 +145,10 @@ class MTS_LOF_revised(nn.Module):
         return x_masked, mask, ids_restore
 
     def push_away_loss(self, features):
-        """计算特征之间的排斥力"""
+        """Calculate the repulsion between features"""
         sim_matrix = torch.matmul(features, features.t())
         mask = torch.eye(features.shape[0], device=features.device)
-        sim_matrix = sim_matrix * (1 - mask)  # 排除自身相似度
+        sim_matrix = sim_matrix * (1 - mask)  # Exclude self-similarity
         return sim_matrix.mean()
         return loss, [contrastive_loss.item(), diversity_loss.item(), push_loss.item()]
 

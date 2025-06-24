@@ -146,6 +146,8 @@ The self-supervised  model consists of:
 
 Our method achieves state-of-the-art performance on sleep analysis tasks. Detailed results and comparisons are available in our paper.
 
+## Interface
+Still we have provided a gradio interface which are easy to use for non-computer specialists. You can input the patient's records in a pt file after preprocessing and the system can automatically output a projection score with warnings if the projection score is higher than the average level of patients. However, the complete version will be online after the publishment of our article.
 
 ## 📄 License
 
