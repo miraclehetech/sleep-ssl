@@ -164,5 +164,5 @@ For questions or issues, please contact:
 - All contributors and collaborators
 
 ---
-We only open-source part of the codes here since the paper is not published yet. After publishing, we will publish all the analysis codes here. The current code and readme documents are just temporary and need some improvements after the publishment of our article.
+We only open-source part of the codes here since the paper is not published yet. After publishing, we will publish all the analysis codes here. The current code and readme documents are just temporary and need some improvements after the publishment of our article. And the current code is just for reference.
 ⭐ If you find this repository helpful, please consider giving it a star! 
